@@ -1,0 +1,51 @@
+[gd_scene load_steps=7 format=3 uid="uid://djbby4d48daqw"]
+
+[ext_resource type="PackedScene" uid="uid://dfo538n4r8e2c" path="res://ball.tscn" id="1_wdcav"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ghrcl"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_n5pc5"]
+sky_material = SubResource("ProceduralSkyMaterial_ghrcl")
+
+[sub_resource type="Environment" id="Environment_afjv0"]
+background_mode = 2
+sky = SubResource("Sky_n5pc5")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_grh1k"]
+size = Vector3(100, 2.08165e-12, 100)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_ahm0d"]
+size = Vector2(100, 100)
+
+[node name="TestScene" type="Node3D"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_afjv0")
+
+[node name="Ball" parent="." instance=ExtResource("1_wdcav")]
+transform = Transform3D(2.20549, 0, 0, 0, 2.20549, 0, 0, 0, 2.20549, -3.81229, 2.4789, -2.24865)
+
+[node name="Ball3" parent="." instance=ExtResource("1_wdcav")]
+transform = Transform3D(4.08039, 0, 0, 0, 4.08039, 0, 0, 0, 4.08039, -0.782261, 2.99906, -4.32615)
+
+[node name="Ball2" parent="." instance=ExtResource("1_wdcav")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.79426, 1.10744, 0.357296)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(0.497762, -0.0853561, 0.863103, 0, 0.995146, 0.0984144, -0.867313, -0.048987, 0.495346, 5.45065, 2.83613, 1.61936)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("BoxShape3D_grh1k")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
+mesh = SubResource("PlaneMesh_ahm0d")

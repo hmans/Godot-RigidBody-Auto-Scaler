@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://dfo538n4r8e2c"]
+
+[ext_resource type="Script" path="res://lib/RigidBodyScaler.gd" id="1_yeyb1"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_003lu"]
+friction = 0.79
+bounce = 0.56
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_3haer"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_ekhf2"]
+
+[node name="Ball" type="RigidBody3D"]
+physics_material_override = SubResource("PhysicsMaterial_003lu")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_3haer")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("SphereMesh_ekhf2")
+
+[node name="RigidBodyScaler" type="Node" parent="."]
+script = ExtResource("1_yeyb1")
