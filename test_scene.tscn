@@ -31,13 +31,15 @@ shadow_enabled = true
 environment = SubResource("Environment_afjv0")
 
 [node name="Ball" parent="." instance=ExtResource("1_wdcav")]
-transform = Transform3D(2.20549, 0, 0, 0, 2.20549, 0, 0, 0, 2.20549, -3.81229, 2.4789, -2.24865)
+transform = Transform3D(2.49453, 0, 0, 0, 2.49453, 0, 0, 0, 2.49453, -3.81229, 2.4789, -2.24865)
+mass = 10.7279
 
 [node name="Ball3" parent="." instance=ExtResource("1_wdcav")]
-transform = Transform3D(4.08039, 0, 0, 0, 4.08039, 0, 0, 0, 4.08039, -0.782261, 2.99906, -4.32615)
+transform = Transform3D(3.88302, 0, 0, 0, 3.88302, 0, 0, 0, 3.88302, -0.34086, 4.77146, -5.20996)
+mass = 35.5152
 
 [node name="Ball2" parent="." instance=ExtResource("1_wdcav")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.79426, 1.10744, 0.357296)
+transform = Transform3D(0.464523, 0, 0, 0, 0.464523, 0, 0, 0, 0.464523, -1.79426, 1.10744, 0.357296)
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(0.497762, -0.0853561, 0.863103, 0, 0.995146, 0.0984144, -0.867313, -0.048987, 0.495346, 5.45065, 2.83613, 1.61936)

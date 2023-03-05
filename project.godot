@@ -14,3 +14,11 @@ config/name="PLUGIN-Rigidbody-Scaler"
 run/main_scene="res://test_scene.tscn"
 config/features=PackedStringArray("4.0", "Forward Plus")
 config/icon="res://icon.svg"
+
+[autoload]
+
+RigidBodyAutoScaler="*res://addons/rigidbody_auto_scaler/RigidBodyAutoScaler.gd"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/rigidbody_auto_scaler/plugin.cfg")
