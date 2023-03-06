@@ -17,7 +17,6 @@ func _perform(node: Node):
 		# Apply scale to all children before we reset it
 		for child in node.get_children():
 			if child is Node3D or child is Node2D:
-				#print(node.scale)
 				child.scale *= node.scale
 
 		# Reset the rigidbody's scale to 1
