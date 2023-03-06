@@ -36,7 +36,7 @@ shadow_enabled = true
 environment = SubResource("Environment_afjv0")
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(0.603236, -0.208412, 0.76985, 0, 0.965255, 0.261311, -0.797562, -0.157633, 0.582277, 4.44926, 3.54163, 3.59703)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.41034, 11.5903)
 
 [node name="Floor" type="StaticBody3D" parent="."]
 
@@ -47,5 +47,9 @@ shape = SubResource("BoxShape3D_grh1k")
 mesh = SubResource("PlaneMesh_ahm0d")
 
 [node name="Spawner" parent="." instance=ExtResource("2_3h6u4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 9.25086, 2.08165e-12)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 5, 2.08165e-12)
+scene = ExtResource("1_wdcav")
+
+[node name="ScaledSpawner" parent="." instance=ExtResource("2_3h6u4")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 5, 5, 2.08165e-12)
 scene = ExtResource("1_wdcav")

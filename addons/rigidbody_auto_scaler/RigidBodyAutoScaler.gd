@@ -31,6 +31,7 @@ func _scale_2d(body: RigidBody2D):
 
 func _scale_3d(body: RigidBody3D):
 	# If the node has a scale of 1, there's nothing for us to do.
+	body.top_level = true
 	if body.scale.x == 1: return
 
 	# Apply scale to all children before we reset it
