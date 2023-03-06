@@ -11,7 +11,6 @@ size = Vector2(1535, 303)
 
 [node name="Spawner2D" parent="." instance=ExtResource("1_suksg")]
 position = Vector2(608, 13)
-scale = Vector2(0.569926, 0.569926)
 scene = ExtResource("1_eux6s")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
