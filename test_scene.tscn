@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://djbby4d48daqw"]
+[gd_scene load_steps=9 format=3 uid="uid://djbby4d48daqw"]
 
 [ext_resource type="PackedScene" uid="uid://dfo538n4r8e2c" path="res://ball.tscn" id="1_wdcav"]
+[ext_resource type="PackedScene" uid="uid://dfbean4d72nik" path="res://Spawner.tscn" id="2_3h6u4"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ghrcl"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -18,8 +19,12 @@ glow_enabled = true
 [sub_resource type="BoxShape3D" id="BoxShape3D_grh1k"]
 size = Vector3(100, 2.08165e-12, 100)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lhd5q"]
+albedo_color = Color(0.266667, 0.14902, 0.0509804, 1)
+
 [sub_resource type="PlaneMesh" id="PlaneMesh_ahm0d"]
-size = Vector2(100, 100)
+material = SubResource("StandardMaterial3D_lhd5q")
+size = Vector2(1000, 1000)
 
 [node name="TestScene" type="Node3D"]
 
@@ -30,24 +35,17 @@ shadow_enabled = true
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_afjv0")
 
-[node name="Ball" parent="." instance=ExtResource("1_wdcav")]
-transform = Transform3D(2.49453, 0, 0, 0, 2.49453, 0, 0, 0, 2.49453, -3.81229, 2.4789, -2.24865)
-mass = 10.7279
-
-[node name="Ball3" parent="." instance=ExtResource("1_wdcav")]
-transform = Transform3D(3.88302, 0, 0, 0, 3.88302, 0, 0, 0, 3.88302, -0.34086, 4.77146, -5.20996)
-mass = 35.5152
-
-[node name="Ball2" parent="." instance=ExtResource("1_wdcav")]
-transform = Transform3D(0.464523, 0, 0, 0, 0.464523, 0, 0, 0, 0.464523, -1.79426, 1.10744, 0.357296)
-
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(0.497762, -0.0853561, 0.863103, 0, 0.995146, 0.0984144, -0.867313, -0.048987, 0.495346, 5.45065, 2.83613, 1.61936)
+transform = Transform3D(0.603236, -0.208412, 0.76985, 0, 0.965255, 0.261311, -0.797562, -0.157633, 0.582277, 4.44926, 3.54163, 3.59703)
 
-[node name="StaticBody3D" type="StaticBody3D" parent="."]
+[node name="Floor" type="StaticBody3D" parent="."]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor"]
 shape = SubResource("BoxShape3D_grh1k")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Floor"]
 mesh = SubResource("PlaneMesh_ahm0d")
+
+[node name="Spawner" parent="." instance=ExtResource("2_3h6u4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 9.25086, 2.08165e-12)
+scene = ExtResource("1_wdcav")
