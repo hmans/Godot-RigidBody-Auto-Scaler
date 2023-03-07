@@ -16,6 +16,13 @@ This plugin installs a global autoload script that listens for new nodes enterin
 
 Both spawning new rigidbodies at runtime and applying a scale to them as well as creating scaled rigidbodies in the editor will _just work_; in the latter case, the editor will still display the little warning triangle in the scene tree, but you can safely ignore it.
 
+### Get in touch
+
+- https://hmans.dev
+- https://norden.social/@hmans
+- https://github.com/hmans
+- hendrik@mans.de
+
 ### License
 
 ```
