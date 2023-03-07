@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://c05mhj7gtga0s"]
 
-[ext_resource type="PackedScene" uid="uid://cwff8tqhg2seh" path="res://examples/2d/ball_2d.tscn" id="1_eux6s"]
 [ext_resource type="PackedScene" path="res://examples/2d/spawner_2d.tscn" id="1_suksg"]
 [ext_resource type="Texture2D" uid="uid://wwfclpenflol" path="res://icon.svg" id="2_ap3v4"]
+[ext_resource type="PackedScene" uid="uid://dit6bi01wydxk" path="res://examples/2d/thing_2d.tscn" id="2_nvsky"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2k3gk"]
 size = Vector2(1535, 303)
@@ -11,12 +11,12 @@ size = Vector2(1535, 303)
 
 [node name="Spawner2D" parent="." instance=ExtResource("1_suksg")]
 position = Vector2(210, 35)
-prefabs = Array[PackedScene]([ExtResource("1_eux6s")])
+prefabs = Array[PackedScene]([ExtResource("2_nvsky")])
 
 [node name="ScaledSpawner2D" parent="." instance=ExtResource("1_suksg")]
 position = Vector2(922, 35)
 scale = Vector2(0.5, 0.5)
-prefabs = Array[PackedScene]([ExtResource("1_eux6s")])
+prefabs = Array[PackedScene]([ExtResource("2_nvsky")])
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 

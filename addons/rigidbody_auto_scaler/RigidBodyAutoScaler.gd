@@ -24,6 +24,7 @@ func _scale_2d(body: RigidBody2D):
 	for child in body.get_children():
 		if child is Node2D:
 			child.scale *= body.global_scale
+			child.transform.origin *= body.global_scale
 
 	# Reset the rigidbody's scale to 1
 	body.global_scale = Vector2.ONE

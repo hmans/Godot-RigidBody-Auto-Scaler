@@ -1,0 +1,35 @@
+[gd_scene load_steps=4 format=3 uid="uid://dit6bi01wydxk"]
+
+[ext_resource type="Texture2D" uid="uid://wwfclpenflol" path="res://icon.svg" id="1_3nguk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p511s"]
+size = Vector2(63, 63)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5g6h2"]
+size = Vector2(68, 14.5)
+
+[node name="Thing2D" type="RigidBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-65, 0)
+shape = SubResource("RectangleShape2D_p511s")
+
+[node name="Icon" type="Sprite2D" parent="CollisionShape2D"]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_3nguk")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(65, 0)
+shape = SubResource("RectangleShape2D_p511s")
+
+[node name="Icon" type="Sprite2D" parent="CollisionShape2D2"]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_3nguk")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_5g6h2")
+
+[node name="Icon" type="Sprite2D" parent="CollisionShape2D3"]
+position = Vector2(0.5, 0.125)
+scale = Vector2(0.523437, 0.107422)
+texture = ExtResource("1_3nguk")
