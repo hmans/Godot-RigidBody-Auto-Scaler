@@ -4,7 +4,6 @@
 
 ![image](https://user-images.githubusercontent.com/1061/223428242-3c1d3d5a-de5f-4217-b88a-22a6b52b8619.png) ![image](https://user-images.githubusercontent.com/1061/223428448-943cd444-511c-483d-af24-7f6cb6e32af0.png)
 
-
 Minimum Godot version: 4.0
 
 ### Features
@@ -15,9 +14,15 @@ Minimum Godot version: 4.0
 
 ### How does it work?
 
-This plugin installs a global autoload script that listens for new nodes entering the active scene tree. When it encounters a rigidbody node with a scale applied, it will automatically reset its scale back to `1`, and instead apply the original scale to each of its children.
+This plugin installs a global autoload script that listens for new nodes entering the active scene tree. When it encounters a rigidbody node with a scale applied, it will automatically reset its scale back to `1`, and instead apply the original scale to each of its children (and their local positions, in case they're not located at origin.)
 
-Both spawning new rigidbodies at runtime and applying a scale to them as well as creating scaled rigidbodies in the editor will _just work_; in the latter case, the editor will still display the little warning triangle in the scene tree, but you can safely ignore it.
+### Caveats
+
+Both spawning new rigidbodies at runtime and applying a scale to them as well as creating scaled rigidbodies in the editor will generally _just work_, but there are a couple of minor caveats you should be aware of:
+
+- When you scale rigidbodies in the editor, it will still display the little warning triangle in the scene tree. You can safely ignore it.
+- When spawning new rigidbodies and scaling them, you must make sure that you apply the scale _before_ adding the nodes to the scene tree (`add_child()` et al), because the scale processing will happen immediately once the node enters the tree.
+- Please also keep in mind that nodes will only ever be processed _once_, when adding the scene tree. This plugin does not allow you to _change_ a physics body's scale during its lifetime.
 
 ### Get in touch
 
