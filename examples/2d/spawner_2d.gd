@@ -1,9 +1,9 @@
 extends Node2D
 
-@export var scene : PackedScene
+@export var prefabs : Array[PackedScene]
 
 func _on_timer_timeout() -> void:
-	var instance = scene.instantiate() as Node2D
+	var instance = prefabs.pick_random().instantiate() as Node2D
 	instance.position.x += randi_range(-50, 50)
 	instance.position.y += randi_range(-10, 10)
 

@@ -1,12 +1,12 @@
 extends Node3D
 
-@export var scene : PackedScene
+@export var prefabs : Array[PackedScene]
 
 
 
 
 func _on_timer_timeout() -> void:
-	var instance = scene.instantiate() as Node3D
+	var instance = prefabs.pick_random().instantiate() as Node3D
 	instance.position.x += randf_range(-1, 1)
 	instance.position.y += randf_range(-1, 1)
 	instance.position.z += randf_range(-1, 1)
