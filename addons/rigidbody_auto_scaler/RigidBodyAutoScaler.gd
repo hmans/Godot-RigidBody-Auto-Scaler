@@ -45,6 +45,7 @@ func _scale_3d(body: RigidBody3D):
 	for child in body.get_children():
 		if child is Node3D:
 			child.scale *= body.scale
+			child.transform.origin *= body.scale
 
 	# Reset the rigidbody's scale to 1
 	body.scale = Vector3.ONE
