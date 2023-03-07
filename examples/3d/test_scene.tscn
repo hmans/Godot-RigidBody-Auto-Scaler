@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://d0r371kfo3o8l"]
 
-[ext_resource type="PackedScene" uid="uid://dfo538n4r8e2c" path="res://examples/3d/ball.tscn" id="1_wdcav"]
 [ext_resource type="PackedScene" path="res://examples/3d/Spawner.tscn" id="2_3h6u4"]
+[ext_resource type="PackedScene" uid="uid://45nnf24jxgv3" path="res://examples/3d/thing.tscn" id="3_s0s8l"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ghrcl"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -48,8 +48,8 @@ mesh = SubResource("PlaneMesh_ahm0d")
 
 [node name="Spawner" parent="." instance=ExtResource("2_3h6u4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 5, 2.08165e-12)
-prefabs = Array[PackedScene]([ExtResource("1_wdcav")])
+prefabs = Array[PackedScene]([ExtResource("3_s0s8l")])
 
 [node name="ScaledSpawner" parent="." instance=ExtResource("2_3h6u4")]
 transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 5, 5, 2.08165e-12)
-prefabs = Array[PackedScene]([ExtResource("1_wdcav")])
+prefabs = Array[PackedScene]([ExtResource("3_s0s8l")])
