@@ -12,6 +12,11 @@ Minimum Godot version: 4.0
 - Works with both `RigidBody2D` and `RigidBody3D` nodes.
 - Will correctly inherit parent scale and fix collision shape offsets, too.
 
+### Installing
+
+- Download it via the Godot Asset Library (coming soon)
+- Download [this repository's ZIP archive](https://github.com/hmans/Godot-RigidBody-Auto-Scaler/archive/refs/heads/main.zip), unpack it into your Godot project, and enable the plugin in your Project Settings
+
 ### How does it work?
 
 This plugin installs a global autoload script that listens for new nodes entering the active scene tree. When it encounters a rigidbody node with a scale applied, it will automatically reset its scale back to `1`, and instead apply the original scale to each of its children (and their local positions, in case they're not located at origin.)
