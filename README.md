@@ -27,6 +27,7 @@ Both spawning new rigidbodies at runtime and applying a scale to them as well as
 
 - When you scale rigidbodies in the editor, it will still display the little warning triangle in the scene tree. You can safely ignore it.
 - When spawning new rigidbodies and scaling them, you must make sure that you apply the scale _before_ adding the nodes to the scene tree (`add_child()` et al), because the scale processing will happen immediately once the node enters the tree.
+- Since 3D collision shapes generally only support uniform scale (ie. all components of the scale vector having the same value), it is recommended that you only apply uniform scale to your rigidbodies, too. If you apply non-uniform scale to them, the plugin _will_ also apply it to their children, but in the case of collision shapes, this may wreak havoc with the physics simulation.
 - Please also keep in mind that nodes will only ever be processed _once_, when adding the scene tree. This plugin does not allow you to _change_ a physics body's scale during its lifetime.
 
 ### Get in touch
