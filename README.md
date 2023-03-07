@@ -2,6 +2,9 @@
 
 **Scale your Godot RigidBody nodes like it was nothing!** This plugin works around a limitation in the Godot engine that prevents RigidBodies from being scaled (see [GitHub Issue #5734](https://github.com/godotengine/godot/issues/5734)). If this issue gets resolved in a future version, this plugin becomes obsolete.
 
+![image](https://user-images.githubusercontent.com/1061/223428242-3c1d3d5a-de5f-4217-b88a-22a6b52b8619.png) ![image](https://user-images.githubusercontent.com/1061/223428448-943cd444-511c-483d-af24-7f6cb6e32af0.png)
+
+
 Minimum Godot version: 4.0
 
 ### Features
