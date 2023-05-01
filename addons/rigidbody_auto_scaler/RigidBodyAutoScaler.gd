@@ -10,13 +10,13 @@ func _exit_tree() -> void:
 
 
 func _perform(node: Node):
-	if node is RigidBody2D:
+	if node is RigidBody2D or node is StaticBody2D:
 		_scale_2d(node)
-	elif node is RigidBody3D:
+	elif node is RigidBody3D or node is StaticBody3D:
 		_scale_3d(node)
 
 
-func _scale_2d(body: RigidBody2D):
+func _scale_2d(body: PhysicsBody2D):
 	# If the node has a scale of 1, there's nothing for us to do.
 	if body.global_scale.x == 1: return
 
@@ -30,7 +30,7 @@ func _scale_2d(body: RigidBody2D):
 	body.global_scale = Vector2.ONE
 
 
-func _scale_3d(body: RigidBody3D):
+func _scale_3d(body: PhysicsBody3D):
 	# First, we'll set this node to use "top level" mode. This basically
 	# disconnects it from its parents transform3d (which a rigidbody3d would
 	# do either way, because it's simulated in the physics world). It has the
