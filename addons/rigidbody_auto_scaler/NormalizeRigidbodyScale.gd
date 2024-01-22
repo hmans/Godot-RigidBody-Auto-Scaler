@@ -16,6 +16,6 @@ func _run():
 	# apply scale to children
 	for node in selections: 
 		if node is PhysicsBody2D:
-			scaler.scale_2d(node)
+			scaler._scale_2d(node)
 		elif node is PhysicsBody3D:
-			scaler.scale_3d(node)
+			scaler._scale_3d(node)
