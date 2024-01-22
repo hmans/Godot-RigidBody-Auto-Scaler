@@ -14,7 +14,7 @@ Minimum Godot version: 4.0
 
 ### Installing
 
-- Download it via the Godot Asset Library (coming soon)
+- Download it via the Godot Asset Library
 - Download [this repository's ZIP archive](https://github.com/hmans/Godot-RigidBody-Auto-Scaler/archive/refs/heads/main.zip), unpack it into your Godot project, and enable the plugin in your Project Settings
 
 ### How does it work?
